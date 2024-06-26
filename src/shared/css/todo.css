@@ -1,0 +1,44 @@
+.to-do {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  max-width: 1300px;
+  min-width: 900px;
+  background-color: #f0f0f0;
+}
+
+.to-do-title-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5px;
+}
+
+.to-do-title-box > h4 {
+  font-size: 18px;
+}
+
+.to-do-title-box > p {
+  font-size: 14px;
+}
+
+.to-do-btn-box {
+  display: flex;
+  gap: 5px;
+}
+
+.to-do-btn-box > button {
+  width: 70px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.to-do-btn-box > button:nth-child(n) {
+  background-color: transparent;
+  border: 1px solid #aaa;
+}
+
+.to-do-btn-box > button:nth-child(n + 2) {
+  background-color: #fff;
+  border: 1px solid #fff;
+}
