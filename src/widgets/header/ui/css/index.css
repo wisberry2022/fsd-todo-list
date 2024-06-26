@@ -6,3 +6,23 @@
   margin: 20px 0;
   text-align: center;
 }
+
+.title-box .menu {
+  border-top: 1px solid #111;
+  display: flex;
+  justify-content: center;
+}
+
+.title-box .menu > li a {
+  display: flex;
+  justify-content: center;
+  padding: 20px 10px;
+  width: 150px;
+  transition: 0.5s;
+}
+
+.title-box .menu > li a:hover {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}

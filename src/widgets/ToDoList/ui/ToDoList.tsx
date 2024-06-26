@@ -1,7 +1,7 @@
 import { FC } from "react";
 import "./css/index.css";
 import { useGetToDoList } from "../model/useGetToDoList";
-import { ToDo, AddToDoBtn } from "@/features/index.ts";
+import { AddToDoBtn, ToDo } from "@/features";
 
 export const ToDoList: FC = () => {
   const { list } = useGetToDoList();

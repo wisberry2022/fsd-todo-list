@@ -3,3 +3,15 @@
   margin: 0;
   box-sizing: content-box;
 }
+
+ul,
+ol,
+li {
+  list-style-type: none;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+}
