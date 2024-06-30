@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { getToDoList } from "../api/fetcher";
-import { ToDo } from "@/shared/types/ToDo";
+import { ToDoResponse } from "@/shared/types/Api";
 
 export const useGetToDoList = () => {
-  const [list, setList] = useState<ToDo[]>([]);
+  const [list, setList] = useState<ToDoResponse[]>([]);
 
   useEffect(() => {
     (async () => {

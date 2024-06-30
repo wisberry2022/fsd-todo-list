@@ -8,13 +8,13 @@ export const Header: FC = () => {
       <h1 className="title">todo-list by fsd</h1>
       <ul className="menu">
         <li>
-          <Link to={`/`}>todo-list</Link>
+          <Link to={`/`}>내 전체 투두리스트</Link>
         </li>
         <li>
-          <Link to={"/help"}>menu2</Link>
+          <Link to={"/help"}>완료한 투두리스트</Link>
         </li>
         <li>
-          <Link to={"/help"}>menu3</Link>
+          <Link to={"/help"}>삭제한 투두리스트</Link>
         </li>
         <li>
           <Link to={"/help"}>menu4</Link>

@@ -1,10 +1,10 @@
 import { ChangeEventHandler, FC } from "react";
 import "./css/index.css";
 import "@/shared/css/todo.css";
-import { ToDo } from "@/shared/types/ToDo";
+import { ToDoResponse } from "@/shared/types/Api";
 
 type EditableToDoProps = {
-  toDo: ToDo;
+  toDo: ToDoResponse;
   onChange: ChangeEventHandler<HTMLInputElement>;
   onClick: () => void;
 };
@@ -26,9 +26,9 @@ const EditableToDo: FC<EditableToDoProps> = (props) => {
         </h4>
         <p>
           <input
-            name="content"
+            name="desc"
             type="text"
-            value={toDo.content}
+            value={toDo.desc}
             onChange={onChange}
             placeholder="write your content of todo"
           />

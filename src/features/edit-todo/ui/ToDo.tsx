@@ -1,5 +1,4 @@
 import { ToDo as CoreToDo } from "@/entities";
-import { ToDo as ToDoType } from "@/shared/types/ToDo";
 import { ChangeEventHandler, FC, useState } from "react";
 import EditableToDo from "./EditableToDo";
 import { deleteToDo, editToDo } from "../api/fetcher";
@@ -7,15 +6,16 @@ import useApi from "@/shared/hooks/useApi";
 import { useRecoilState } from "recoil";
 import { modalState } from "@/shared/ui/modal/confirm-modal/states/states";
 import ConfirmModal from "@/shared/ui/modal/confirm-modal/component/ConfirmModal";
+import { ToDoResponse } from "@/shared/types/Api";
 
 type ToDoProps = {
-  todo: ToDoType;
+  todo: ToDoResponse;
 };
 
 export const ToDo: FC<ToDoProps> = (props) => {
   const { todo } = props;
   const { renewal } = useApi();
-  const [data, setData] = useState<ToDoType>(todo);
+  const [data, setData] = useState<ToDoResponse>(todo);
   const [isEdit, setEdit] = useState<boolean>(false);
   const [modal, setModal] = useRecoilState(modalState);
 
@@ -47,8 +47,9 @@ export const ToDo: FC<ToDoProps> = (props) => {
 
   const onDelete = async () => {
     try {
+      console.log("삭제!", todo.id);
       await deleteToDo(todo.id);
-      setModal("");
+      setModal(0);
       renewal();
     } catch (e) {
       console.error(e);

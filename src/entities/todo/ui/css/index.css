@@ -1,0 +1,11 @@
+.to-do > .left {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+.check {
+  width: 15px;
+  height: 15px;
+}

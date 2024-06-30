@@ -1,24 +1,11 @@
-import { ToDo } from "@/shared/types/ToDo";
+import { ToDo } from "@/shared/api/RestService";
+import { ToDoResponse } from "@/shared/types/Api";
 
-export const editToDo = async (sendData: ToDo) => {
-  await fetch(`http://localhost:5000/result/${sendData.id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      title: sendData.title,
-      content: sendData.content,
-    }),
-  });
+export const editToDo = async (sendData: ToDoResponse) => {
+  const { status, ...update } = sendData;
+  await ToDo.update(update);
 };
 
-
-export const deleteToDo = async (id: string) => {
-  await fetch(`http://localhost:5000/result/${id}`, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+export const deleteToDo = async (id: number) => {
+  await ToDo.delete(id);
 };
