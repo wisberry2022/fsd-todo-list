@@ -16,4 +16,7 @@ export const ToDo = {
   delete: async (id: number): Promise<void> => {
     await axiosBackInstance.delete(Paths.todo.delete(id));
   },
+  conclude: async (ids: number[]): Promise<void> => {
+    await axiosBackInstance.put(Paths.todo.conclude, ids);
+  },
 };

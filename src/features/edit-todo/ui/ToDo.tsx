@@ -10,10 +10,11 @@ import { ToDoResponse } from "@/shared/types/Api";
 
 type ToDoProps = {
   todo: ToDoResponse;
+  onCheck: ChangeEventHandler<HTMLInputElement>;
 };
 
 export const ToDo: FC<ToDoProps> = (props) => {
-  const { todo } = props;
+  const { todo, onCheck } = props;
   const { renewal } = useApi();
   const [data, setData] = useState<ToDoResponse>(todo);
   const [isEdit, setEdit] = useState<boolean>(false);
@@ -62,7 +63,7 @@ export const ToDo: FC<ToDoProps> = (props) => {
 
   return (
     <>
-      <CoreToDo toDo={todo} onEdit={toggleEdit} onDelete={onDeleteModal} />
+      <CoreToDo toDo={todo} onChange={onCheck} onEdit={toggleEdit} onDelete={onDeleteModal} />
       {modal === todo.id && (
         <ConfirmModal
           title="투두 리스트 삭제"

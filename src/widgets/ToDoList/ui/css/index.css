@@ -20,6 +20,11 @@
   width: 100%;
 }
 
+.to-do-list > .list-wrapper > .filter-header .left {
+  display: flex;
+  gap: 5px;
+}
+
 .filter-header .add-btn {
   padding: 10px 15px;
   border: 1px solid #f0f0f0;
